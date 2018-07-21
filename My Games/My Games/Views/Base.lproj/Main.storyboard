@@ -14,7 +14,7 @@
         <!--Lista de Plataformas-->
         <scene sceneID="Vdv-r3-byk">
             <objects>
-                <tableViewController id="9AK-3S-ydp" sceneMemberID="viewController">
+                <tableViewController id="9AK-3S-ydp" customClass="ConsolesTableViewController" customModule="My_Games" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3zd-sD-Ts9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,13 @@
                             <outlet property="delegate" destination="9AK-3S-ydp" id="d6c-1W-ich"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de Plataformas" id="hps-aX-vPk"/>
+                    <navigationItem key="navigationItem" title="Lista de Plataformas" id="hps-aX-vPk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ftb-YQ-5Vf">
+                            <connections>
+                                <action selector="addConsoleClick:" destination="9AK-3S-ydp" id="1GO-cS-H6e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxZ-Ws-Cdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +82,7 @@
         <!--Lista de Jogos-->
         <scene sceneID="Ryu-V0-4rB">
             <objects>
-                <tableViewController id="nBa-bL-oIR" sceneMemberID="viewController">
+                <tableViewController id="nBa-bL-oIR" customClass="GamesTableViewController" customModule="My_Games" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XQT-bq-End">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +122,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de Jogos" id="t5Q-8c-ugv">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="byc-5z-wo5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="byc-5z-wo5">
                             <connections>
                                 <segue destination="HTG-Kh-R5o" kind="show" id="3kl-pP-Skn"/>
                             </connections>
@@ -127,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="854" y="-290"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="zWj-7Z-xa0">
             <objects>
-                <viewController id="TcJ-9E-5Eo" sceneMemberID="viewController">
+                <viewController id="TcJ-9E-5Eo" customClass="GameViewController" customModule="My_Games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BMS-lx-dTd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +181,12 @@
                         <viewLayoutGuide key="safeArea" id="qh9-vR-3aN"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="C1S-zB-b4E"/>
+                    <connections>
+                        <outlet property="ivCover" destination="MM7-l9-V31" id="GQF-VQ-U28"/>
+                        <outlet property="lbConsole" destination="YFa-32-rND" id="Pg6-oY-HT1"/>
+                        <outlet property="lbReleaseDate" destination="3Jr-Lu-hC4" id="Esa-fL-zcb"/>
+                        <outlet property="lbTitle" destination="dCl-vq-BO2" id="Peh-b1-9Mu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIh-jI-ZLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,7 +195,7 @@
         <!--Novo Jogo-->
         <scene sceneID="lCo-Pu-4oy">
             <objects>
-                <viewController id="HTG-Kh-R5o" sceneMemberID="viewController">
+                <viewController id="HTG-Kh-R5o" customClass="AddEditViewController" customModule="My_Games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxw-mz-fdB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +224,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y4z-Nm-wAW">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y4z-Nm-wAW">
                                 <rect key="frame" x="16" y="226" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="f8I-j7-gNx"/>
@@ -236,6 +248,9 @@
                                 <state key="normal" title="ADICIONAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditGame:" destination="HTG-Kh-R5o" eventType="touchUpInside" id="eIf-1E-Dr3"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="40e-Nh-xQh">
                                 <rect key="frame" x="16" y="360" width="343" height="190"/>
@@ -243,6 +258,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op3-Sj-APx">
                                 <rect key="frame" x="15.5" y="360" width="343" height="190"/>
                                 <state key="normal" title="Toque para adicionar imagem de capa"/>
+                                <connections>
+                                    <action selector="AddEditCover:" destination="HTG-Kh-R5o" eventType="touchUpInside" id="hQb-fP-Vd4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -277,10 +295,18 @@
                         <viewLayoutGuide key="safeArea" id="pHt-NG-Rqx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Jogo" id="EDb-lS-2B1"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="1wu-9h-CZb" id="kph-td-CU7"/>
+                        <outlet property="btCover" destination="op3-Sj-APx" id="1Bw-Wj-Dcg"/>
+                        <outlet property="dpReleaseDate" destination="Y4z-Nm-wAW" id="5Y4-xF-DfD"/>
+                        <outlet property="ivCover" destination="40e-Nh-xQh" id="vUx-QV-0kT"/>
+                        <outlet property="tfConsole" destination="HGQ-x0-B78" id="F78-an-183"/>
+                        <outlet property="tfTitle" destination="zd4-V1-Xrc" id="Dgc-S5-gbE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PND-3W-nbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552.8" y="-998.05097451274366"/>
+            <point key="canvasLocation" x="1769" y="-1004"/>
         </scene>
         <!--Jogos-->
         <scene sceneID="ZzZ-OG-3sc">
@@ -337,4 +363,5 @@
             <color red="1" green="0.23499999940395355" blue="0.58399999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
