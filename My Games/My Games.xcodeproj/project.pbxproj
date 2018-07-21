@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570729F721036644004002EA /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570729F621036644004002EA /* ViewController+CoreData.swift */; };
+		570729FA210374F7004002EA /* ConsolesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570729F9210374F7004002EA /* ConsolesManager.swift */; };
 		57BB61B82102981900187537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB61B72102981900187537 /* AppDelegate.swift */; };
 		57BB61BA2102981900187537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB61B92102981900187537 /* ViewController.swift */; };
 		57BB61BD2102981900187537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BB61BB2102981900187537 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570729F621036644004002EA /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
+		570729F9210374F7004002EA /* ConsolesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolesManager.swift; sourceTree = "<group>"; };
 		57BB61B42102981900187537 /* My Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BB61B72102981900187537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BB61B92102981900187537 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570729F82103664E004002EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				570729F621036644004002EA /* ViewController+CoreData.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		57BB61AB2102981900187537 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +82,8 @@
 				57BB61C12102981900187537 /* Assets.xcassets */,
 				57BB61C62102981900187537 /* Info.plist */,
 				57BB61BE2102981900187537 /* My_Games.xcdatamodeld */,
+				570729F82103664E004002EA /* Extensions */,
+				570729F9210374F7004002EA /* ConsolesManager.swift */,
 			);
 			path = "My Games";
 			sourceTree = "<group>";
@@ -168,10 +182,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BB61C02102981900187537 /* My_Games.xcdatamodeld in Sources */,
+				570729FA210374F7004002EA /* ConsolesManager.swift in Sources */,
 				57BB61D5210353E800187537 /* AddEditViewController.swift in Sources */,
 				57BB61CF2103538F00187537 /* GamesTableViewController.swift in Sources */,
 				57BB61BA2102981900187537 /* ViewController.swift in Sources */,
 				57BB61B82102981900187537 /* AppDelegate.swift in Sources */,
+				570729F721036644004002EA /* ViewController+CoreData.swift in Sources */,
 				57BB61D3210353C700187537 /* GameViewController.swift in Sources */,
 				57BB61D1210353AC00187537 /* ConsolesTableViewController.swift in Sources */,
 			);
